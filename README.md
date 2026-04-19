@@ -33,7 +33,7 @@ This is a small demo project for learning purposes, during which you will build 
 - take a look at `initial-requirements.md`, those are the initial requirements, you can make a small adjustments if you want
 - think a bit about: what requirements would you like to have?
 
-### 2.Use the brainstorming skill of obra super powers to detail the requirements, create UI-Mockups and start the implementation (20-25min)
+### 2.Use the brainstorming skill of obra super powers to detail the requirements, create UI-Mockups and start the implementation (20-25  min)
 
 - If the super powers have been loaded correctly, you can just enter the following prompt and you should see something like the following:
 ![How to check obra super powers are being used](assets/screenshot_obra_superpowers_brainstorming.png)
@@ -59,7 +59,7 @@ This is a small demo project for learning purposes, during which you will build 
 ### 6. Optional: Adversarial testing
 
 - Next evolution / step up in the automation chain: let the model itself find bugs in the application & verify its functionality.
-- Prompt: `Please perform adversarial testing end2end using the frontend. Please start the frontend and backend and then perform adversarial testing on the UI to make sure the app works. Look at the available documentation for how the application should work and perform the testing to make sure the application works as specified & fulfills the requirements. Please note the found bugs in the TODO.md file. Please perform up to 100 iterations or 25 bugs found. For each bug, please note a brief title, a description on why this is relevant, steps to reproduce the bug and the implications on a business level on the app. For UI-Testing, please use playwright. `
+- Prompt: `Please perform adversarial testing end2end using the frontend. Please start the frontend and backend and then perform adversarial testing on the UI to make sure the app works. Look at the available documentation for how the application should work and perform the testing to make sure the application works as specified & fulfills the requirements. Please note the found bugs in the TODO.md file. Please perform up to 100 iterations or 25 bugs found. For each bug, please note a brief title, a description on why this is relevant, steps to reproduce the bug and the implications on a business level on the app.`
 
 ### 7. Optional: Fix the bugs found during adversarial testing
 
