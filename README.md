@@ -3,20 +3,21 @@
 This is a small demo project for learning purposes, during which you will build a small application powered by AI to build your own AI powered application, which can gather news & prepare a newsletter.
 
 ## Pre-Requisites:
-- Isolated environment for running claude code
-- API-Key for Haiku
+- Isolated environment for running claude code in yolo mode (--dangerously-skip-permissions): Either a devcontainer or in our case [ccbox](https://github.com/mk0e/ccbox)
+- API-Key for Anthropic Haiku or similar small model for creating the newsletter & ranking the news
 
 ## Expected outcome of this learning experience
 
 - hands on experience using obra super powers
-- hand on experience of `vibe-coding``
+- hand on experience of `vibe-coding`
 - hands on experience of troubleshooting with claude code
 
 ## Steps:
 
 ### 0. Introduction & Minimal Env-Setup (5min)
 - Clone this repository if you have git installed or download it as zip file and then unzip it.
-- Open a terminal / shell at the location of the files and type `ccbox web` (the installation instructions can be found [here](https://github.com/mk0e/ccbox))
+![How to download or clone the git repository](assets/screenshot_git_clone_download_zip.png)
+- Open a terminal / shell at the location of the files and type `ccbox web` (the installation instructions can be found [here](https://github.com/mk0e/ccbox)). On Windows you need to so in the WSL2.
 
 
 ### 1. brainstorm your personal requirements for the app(5min)
