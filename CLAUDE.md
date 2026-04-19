@@ -18,10 +18,14 @@ This container is **transient**. On every restart, anything outside this project
 - Any change made outside the project directory (system settings, globally installed tools, environment tweaks) must be **recorded in this project** (e.g. a setup script or notes file) so it can be reapplied after a restart.
 - Assume a clean system on every session start.
 
-## Python packages
+## Installed packages
 
-- Always install Python packages with:
+Every installed package — regardless of language or ecosystem — must be recorded in the appropriate manifest file inside the project directory. Packages not recorded there will be lost on container restart and cannot be easily recovered.
+
+- **Python** (`pip`): install with
   ```
   pip install --no-cache-dir --break-system-packages <package>
   ```
-- Every installed package must be recorded in `requirements.txt` or `pyproject.toml` in the project directory. Packages not recorded there will be lost on container restart and cannot be easily recovered.
+  and record in `requirements.txt` or `pyproject.toml`.
+- **JavaScript / Node** (`npm`, `yarn`, `pnpm`): install with the appropriate `--save` / `--save-dev` flags so the package is recorded in `package.json` (and the lockfile is updated).
+- **Other ecosystems**: use the ecosystem's standard manifest (e.g. `Gemfile`, `go.mod`, `Cargo.toml`) and make sure every installed dependency is listed there before ending the session.
