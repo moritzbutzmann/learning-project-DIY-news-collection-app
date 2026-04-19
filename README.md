@@ -18,6 +18,9 @@ This is a small demo project for learning purposes, during which you will build 
 - Clone this repository if you have git installed or download it as zip file and then unzip it.
 ![How to download or clone the git repository](assets/screenshot_git_clone_download_zip.png)
 - Open a terminal / shell at the location of the files and type `ccbox web` (the installation instructions can be found [here](https://github.com/mk0e/ccbox)). On Windows you need to so in the WSL2.
+- This starts a web version of vs code in an isolated docker container. Follow the instructions you see in the terminal on opening the app.
+- Use the open chat window for entering the prompts for following the instructions below.
+- When Claude asks you any questions and you are not sure about what to reply, either go for the simplest option or ask Claude to explain it to you, e.g. on a more high level, for non-developers or from a business perspective
 
 
 ### 1. brainstorm your personal requirements for the app(5min)
@@ -25,19 +28,21 @@ This is a small demo project for learning purposes, during which you will build 
 - take a look at `initial-requirements.md`, those are the initial requirements, you can make a small adjustments if you want
 - think a bit about: what requirements would you like to have?
 
-### 2. Ask obra superpowers with /brainstorming to create a set of detailed requirements out of the bullet points (5-10min)
+### 2.Use the brainstorming skill of obra super powers to create a set of detailed requirements out of the bullet points (5-10min)
 
-- Prompt: `/superpowers:brainstorm Please create the detailed requirements based on the initial requirements in initial-requirements.md and write them into a requirements.md file. The requirements should should be on a functional and technical level, detailing what functionality the application should have and what technologies should be used for the implementation. The goal is to use them later for implementation. DO NOT START WITH THE IMPLEMENTATION NOW, JUST CREATE THE VERY DETAILED REQUIREMENTS YOU CAN USE LATER FOR IMPLEMENTATION`
+- If the super powers have been loaded correctly, you can just enter the following prompt and you should see something like the following:
+![How to check obra super powers are being used](assets/screenshot_obra_superpowers_brainstorming.png)
+- Prompt: `Brainstorm: Please create the detailed requirements based on the initial requirements in initial-requirements.md and write them into a requirements.md file. The requirements should should be on a functional and technical level, detailing what functionality the application should have and what technologies should be used for the implementation. The goal is to use them later for implementation. DO NOT START WITH THE IMPLEMENTATION NOW, JUST CREATE THE VERY DETAILED REQUIREMENTS YOU CAN USE LATER FOR IMPLEMENTATION`
 - For the scope of this time-boxed session, pls opt for simple options in the questions you are getting asked - feel free later to make different choices
 - if in doubt what to do, ask claude
 
 ### 3. Ask with obra super powers to create UI-Mockups for the website (5-10min)
 
 - you can exit a session with `/exit` and after starting, you can resume your session with `/resume`
-- Prompt: `/superpowers:brainstorm Please create me UI wireframes based on the websites and show me them either inline in the terminal or with your live-server. The UI-Design should capture all main flows and application screens. You can find the requirements in requirements.md. Please adapt the UI design until I am happy and then write the UI-Design into a UI-Design.md file.`
+- Prompt: `Brainstorm: Please create me UI wireframes based on the websites and show me them either inline in the terminal or with your live-server. The UI-Design should capture all main flows and application screens. You can find the requirements in requirements.md. Please adapt the UI design until I am happy and then write the UI-Design into a UI-Design.md file.`
 
 ### 4. Ask obra super powers to perform the implementation (10min)
-- Prompt: `/superpowers:brainstorm: Please perform the full implementation of this applications based on the requirements.md and the UI-Desig.md file.  Please use the sample.env file as a reference for the environment variables and the configuration of the LLM. The environment variables should be read from an .env file, which will be created from the user. Please perform the changes directly on main.`
+- Prompt: `Brainstorm: Please perform the full implementation of this applications based on the requirements.md and the UI-Desig.md file.  Please use the sample.env file as a reference for the environment variables and the configuration of the LLM. The environment variables should be read from an .env file, which will be created from the user. Please perform the changes directly on main.`
 -> Now, just enjoy the show and watch it.
 
 
@@ -49,9 +54,9 @@ This is a small demo project for learning purposes, during which you will build 
 
 ### 6. Bug fixing (5-10min):
 
-- Example Prompt: `/superpowers:brainstorm: I encountered bug x, z does not work when doing y, pls fix it` or
-  `/superpowers:brainstorm: X does not work please fix it`
-- The <secret ingredient> is to ask claude, whenever it is doing any changes to verify it works end2end, with that, you build up a feedbackloop for Claude against it can fix & implement things until it works. To test this out instead, you can try `/superpowers:brainstorm: X does not work please fix it`
+- Example Prompt: `Brainstorm: I encountered bug x, z does not work when doing y, pls fix it` or
+  `Brainstorm:: X does not work please fix it`
+- The "secret ingredient" is to ask claude, whenever it is doing any changes to verify it works end2end, with that, you build up a feedbackloop for Claude against it can fix & implement things until it works. To test this out instead, you can try `Brainstorm:: X does not work please fix it`
 
 ### 7. Optional: Adversarial testing?
 
