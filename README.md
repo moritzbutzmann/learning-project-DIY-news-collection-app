@@ -8,7 +8,7 @@ This is a small demo project for learning purposes, during which you will build 
 
 ## Expected outcome of this learning experience
 
-- hands on experience using obra super powers
+- hands on experience using [obra super powers](https://github.com/obra/superpowers)
 - hand on experience of `vibe-coding`
 - hands on experience of troubleshooting with claude code
 
@@ -18,9 +18,13 @@ This is a small demo project for learning purposes, during which you will build 
 - Clone this repository if you have git installed or download it as zip file and then unzip it.
 ![How to download or clone the git repository](assets/screenshot_git_clone_download_zip.png)
 - Open a terminal / shell at the location of the files and type `ccbox web` (the installation instructions can be found [here](https://github.com/mk0e/ccbox)). On Windows you need to so in the WSL2.
-- This starts a web version of vs code in an isolated docker container. Follow the instructions you see in the terminal on opening the app.
-- Use the open chat window for entering the prompts for following the instructions below.
+- This starts a web version of Visual Studio Code in an isolated docker container. Follow the instructions you see in the terminal on opening the app.
+- In the web version of Visual Studio Code, please open the terminal (see screenshot below):
+- Type `claude` to open Claude in the terminal - now you are ready to go!
 - When Claude asks you any questions and you are not sure about what to reply, either go for the simplest option or ask Claude to explain it to you, e.g. on a more high level, for non-developers or from a business perspective
+- If you encounter an error while following the instructions, just tell Claude and describe the error
+- If you don't like something, also directly tell Claude, with `ESC`, you can interrupt Claude.
+- In case you find yourself waiting for Claude to finish generating, feel free to take a look at the patterns & best practises at the bottom of the page.
 
 
 ### 1. brainstorm your personal requirements for the app(5min)
@@ -28,42 +32,35 @@ This is a small demo project for learning purposes, during which you will build 
 - take a look at `initial-requirements.md`, those are the initial requirements, you can make a small adjustments if you want
 - think a bit about: what requirements would you like to have?
 
-### 2.Use the brainstorming skill of obra super powers to create a set of detailed requirements out of the bullet points (5-10min)
+### 2.Use the brainstorming skill of obra super powers to detail the requirements, create UI-Mockups and start the implementation (15-20min)
 
 - If the super powers have been loaded correctly, you can just enter the following prompt and you should see something like the following:
 ![How to check obra super powers are being used](assets/screenshot_obra_superpowers_brainstorming.png)
-- Prompt: `Brainstorm: Please create the detailed requirements based on the initial requirements in initial-requirements.md and write them into a requirements.md file. The requirements should should be on a functional and technical level, detailing what functionality the application should have and what technologies should be used for the implementation. The goal is to use them later for implementation. DO NOT START WITH THE IMPLEMENTATION NOW, JUST CREATE THE VERY DETAILED REQUIREMENTS YOU CAN USE LATER FOR IMPLEMENTATION`
+- Prompt: `Brainstorm: Please create the detailed requirements based on the initial requirements in initial-requirements.md and write them into a requirements.md file. The requirements should should be on a functional and technical level, detailing what functionality the application should have and what technologies should be used for the implementation. The goal is to use them later for implementation. Please create me UI wireframes based on the websites and show me them either inline in the terminal or with your live-server. The UI-Design should capture all main flows and application screens. You can find the requirements in requirements.md. Please adapt the UI design until I am happy and then write the UI-Design into a UI-Design.md file. The full implementation of this applications should based on the requirements.md and the UI-Desig.md file. Please use the environment variables ANTHROPIC_API_KEY &ANTHROPIC_BASE_URL for the LLM integration and use claude-sonnet-4-6 for this. Please perform the changes directly on main.`
 - For the scope of this time-boxed session, pls opt for simple options in the questions you are getting asked - feel free later to make different choices
-- if in doubt what to do, ask claude
-
-### 3. Ask with obra super powers to create UI-Mockups for the website (5-10min)
-
-- you can exit a session with `/exit` and after starting, you can resume your session with `/resume`
-- Prompt: `Brainstorm: Please create me UI wireframes based on the websites and show me them either inline in the terminal or with your live-server. The UI-Design should capture all main flows and application screens. You can find the requirements in requirements.md. Please adapt the UI design until I am happy and then write the UI-Design into a UI-Design.md file.`
-
-### 4. Ask obra super powers to perform the implementation (10min)
-- Prompt: `Brainstorm: Please perform the full implementation of this applications based on the requirements.md and the UI-Desig.md file.  Please use the sample.env file as a reference for the environment variables and the configuration of the LLM. The environment variables should be read from an .env file, which will be created from the user. Please perform the changes directly on main.`
--> Now, just enjoy the show and watch it.
+- If this is fully completed & you get asked the question what to do (see screeshot below), just select the option `keept as it is` 
+![Select - keep as it is when using obra super powers here](assets/screenshot_superpowers_keep_as_it_is.png)
+- If in doubt what to do, ask claude
 
 
-### 5. Ask Claude to spin up the frontend and backend and play around with the UI (5min - does it work as designed?) (5-10min)
+### 4. Ask Claude to spin up the frontend and backend and play around with the UI (5min - does it work as designed?) (5-10min)
 
-- Prompt: `Please now spin up frontend and backend so that I can test it.`
-- Copy sample.env to a new file .env & paste the API keys there.
+- Copy sample.env to a new file .env & copy the details of the API key here.
+- Once this is done, pls execute the following prompt: `Please now spin up frontend and backend so that I can test it.`
 - Please open the corresponding frontend, play around with it and check whether everything works
 
-### 6. Bug fixing (5-10min):
+### 5. Bug fixing (5-10min):
 
 - Example Prompt: `Brainstorm: I encountered bug x, z does not work when doing y, pls fix it` or
   `Brainstorm:: X does not work please fix it`
 - The "secret ingredient" is to ask claude, whenever it is doing any changes to verify it works end2end, with that, you build up a feedbackloop for Claude against it can fix & implement things until it works. To test this out instead, you can try `Brainstorm:: X does not work please fix it`
 
-### 7. Optional: Adversarial testing?
+### 6. Optional: Adversarial testing
 
 - Next evolution / step up in the automation chain: let the model itself find bugs in the application & verify its functionality.
-- Prompt: `/ralph loop. Please perform adversarial testing end2end using the frontend. Please start the frontend and backend and then perform adversarial testing on the UI to make sure the app works. Look at the available documentation for how the application should work and perform the testing to make sure the application works as specified & fulfills the requirements. Please note the found bugs in the TODO.md file. Please perform up to 100 iterations or 25 bugs found. For each bug, please note a brief title, a description on why this is relevant, steps to reproduce the bug and the implications on a business level on the app. For UI-Testing, please use playwright. `
+- Prompt: `Please perform adversarial testing end2end using the frontend. Please start the frontend and backend and then perform adversarial testing on the UI to make sure the app works. Look at the available documentation for how the application should work and perform the testing to make sure the application works as specified & fulfills the requirements. Please note the found bugs in the TODO.md file. Please perform up to 100 iterations or 25 bugs found. For each bug, please note a brief title, a description on why this is relevant, steps to reproduce the bug and the implications on a business level on the app. For UI-Testing, please use playwright. `
 
-### 8. Optional: Fix the bugs found during adversarial testing
+### 7. Optional: Fix the bugs found during adversarial testing
 
 - Fix the bugs found through adversarial testing using claude & super powers
 - after each fix, perform adversarial testing to make sure the app still works
@@ -78,7 +75,7 @@ This is a small demo project for learning purposes, during which you will build 
 
 (not all of them have been applied here due to the time constraints)
 
-- Feedback loops: let the agent verify end2end that the implemented functionality works and work on it until it can verify it works, aka <closing the loop>
+- Feedback loops: let the agent verify end2end that the implemented functionality works and work on it until it can verify it works, aka `closing the loop`
   -> this includes configuring an LLM key with a small budget, so that claude can test the entire functionality off the app including everything LLM related
 - Use Obra Superpowers for brainstorming, implementation and bug fixing (or anything else involving more complex work)
 - Add instructions to claude.md to note any learnings in an ai-learnings.md file for troubleshooting and in case of problems, please look it up whether a solution has already been found
