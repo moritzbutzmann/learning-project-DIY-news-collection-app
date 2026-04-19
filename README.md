@@ -20,6 +20,7 @@ This is a small demo project for learning purposes, during which you will build 
 - Open a terminal / shell at the location of the files and type `ccbox web` (the installation instructions can be found [here](https://github.com/mk0e/ccbox)). On Windows you need to so in the WSL2.
 - This starts a web version of Visual Studio Code in an isolated docker container. Follow the instructions you see in the terminal on opening the app.
 - In the web version of Visual Studio Code, please open the terminal (see screenshot below):
+![How to open terminal](assets/screenshot_how_to_open_terminal.png)
 - Type `claude` to open Claude in the terminal - now you are ready to go!
 - When Claude asks you any questions and you are not sure about what to reply, either go for the simplest option or ask Claude to explain it to you, e.g. on a more high level, for non-developers or from a business perspective
 - If you encounter an error while following the instructions, just tell Claude and describe the error
@@ -32,18 +33,18 @@ This is a small demo project for learning purposes, during which you will build 
 - take a look at `initial-requirements.md`, those are the initial requirements, you can make a small adjustments if you want
 - think a bit about: what requirements would you like to have?
 
-### 2.Use the brainstorming skill of obra super powers to detail the requirements, create UI-Mockups and start the implementation (15-20min)
+### 2.Use the brainstorming skill of obra super powers to detail the requirements, create UI-Mockups and start the implementation (20-25min)
 
 - If the super powers have been loaded correctly, you can just enter the following prompt and you should see something like the following:
 ![How to check obra super powers are being used](assets/screenshot_obra_superpowers_brainstorming.png)
-- Prompt: `Brainstorm: Please create the detailed requirements based on the initial requirements in initial-requirements.md and write them into a requirements.md file. The requirements should should be on a functional and technical level, detailing what functionality the application should have and what technologies should be used for the implementation. The goal is to use them later for implementation. Please create me UI wireframes based on the websites and show me them either inline in the terminal or with your live-server. The UI-Design should capture all main flows and application screens. You can find the requirements in requirements.md. Please adapt the UI design until I am happy and then write the UI-Design into a UI-Design.md file. The full implementation of this applications should based on the requirements.md and the UI-Desig.md file. Please use the environment variables ANTHROPIC_API_KEY &ANTHROPIC_BASE_URL for the LLM integration and use claude-sonnet-4-6 for this. Please perform the changes directly on main.`
+- Prompt: `Brainstorm: Build the AI News Collector app based on initial-requirements.md. Please create detailed requirements in a requirements.md, then create UI wireframes and iterate until I approve them, saving the final design to UI-Design.md. Then implement the full app. Use ANTHROPIC_API_KEY & ANTHROPIC_BASE_URL env vars. Commit directly to main. Use subagents for parallel execution where possible.`
 - For the scope of this time-boxed session, pls opt for simple options in the questions you are getting asked - feel free later to make different choices
 - If this is fully completed & you get asked the question what to do (see screeshot below), just select the option `keept as it is` 
 ![Select - keep as it is when using obra super powers here](assets/screenshot_superpowers_keep_as_it_is.png)
 - If in doubt what to do, ask claude
 
 
-### 4. Ask Claude to spin up the frontend and backend and play around with the UI (5min - does it work as designed?) (5-10min)
+### 4. Ask Claude to spin up the frontend and backend and play around with the UI (does it work as designed?) (5min)
 
 - Copy sample.env to a new file .env & copy the details of the API key here.
 - Once this is done, pls execute the following prompt: `Please now spin up frontend and backend so that I can test it.`
