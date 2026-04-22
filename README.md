@@ -4,7 +4,7 @@ This is a small demo project for learning purposes, during which you will build 
 
 ## Pre-Requisites:
 - Isolated environment for running claude code in yolo mode (--dangerously-skip-permissions): Either a devcontainer or in our case [ccbox](https://github.com/mk0e/ccbox)
-- API-Key for Anthropic Haiku or similar small model for creating the newsletter & ranking the news
+
 
 ## Expected outcome of this learning experience
 
@@ -46,8 +46,7 @@ This is a small demo project for learning purposes, during which you will build 
 
 ### 4. Ask Claude to spin up the frontend and backend and play around with the UI (does it work as designed?) (5min)
 
-- Copy sample.env to a new file .env & copy the details of the API key here.
-- Once this is done, pls execute the following prompt: `Please now spin up frontend and backend so that I can test it.`
+- Pls execute the following prompt: `Please now spin up frontend and backend so that I can test it.`
 - Please open the corresponding frontend, play around with it and check whether everything works
 
 ### 5. Bug fixing (5-10min):
