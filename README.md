@@ -9,7 +9,7 @@ This is a small demo project for learning purposes, during which you will build 
 ## Expected outcome of this learning experience
 
 - hands on experience using [obra super powers](https://github.com/obra/superpowers)
-- hand on experience of `vibe-coding`
+- hands on experience of `vibe-coding`
 - hands on experience of troubleshooting with claude code
 
 ## Steps:
@@ -17,7 +17,7 @@ This is a small demo project for learning purposes, during which you will build 
 ### 0. Introduction & Minimal Env-Setup (5min)
 - Clone this repository if you have git installed or download it as zip file and then unzip it.
 ![How to download or clone the git repository](assets/screenshot_git_clone_download_zip.png)
-- Open a terminal / shell at the location of the files and type `ccbox web` (the installation instructions can be found [here](https://github.com/mk0e/ccbox)). On Windows you need to so in the WSL2.
+- Open a terminal / shell at the location of the files and type `ccbox web` (the installation instructions can be found [here](https://github.com/mk0e/ccbox)). On Windows you need to do so in WSL2.
 - This starts a web version of Visual Studio Code in an isolated docker container. Follow the instructions you see in the terminal on opening the app.
 - In the web version of Visual Studio Code, please open the terminal (see screenshot below):
 ![How to open terminal](assets/screenshot_how_to_open_terminal.png)
@@ -25,23 +25,23 @@ This is a small demo project for learning purposes, during which you will build 
 - When Claude asks you any questions and you are not sure about what to reply, either go for the simplest option or ask Claude to explain it to you, e.g. on a more high level, for non-developers or from a business perspective
 - If you encounter an error while following the instructions, just tell Claude and describe the error
 - If you don't like something, also directly tell Claude, with `ESC`, you can interrupt Claude.
-- In case you find yourself waiting for Claude to finish generating, feel free to take a look at the patterns & best practises at the bottom of the page.
+- In case you find yourself waiting for Claude to finish generating, feel free to take a look at the patterns & best practices at the bottom of the page.
 
 
-### 1. brainstorm your personal requirements for the app(5min)
+### 1. brainstorm your personal requirements for the app (5min)
 
 - take a look at `initial-requirements.md`, those are the initial requirements, you can make a small adjustments if you want
 - think a bit about: what requirements would you like to have?
 
-### 2.Use the brainstorming skill of obra super powers to detail the requirements, create UI-Mockups and start the implementation (20-25  min)
+### 2. Use the brainstorming skill of obra super powers to detail the requirements, create UI-Mockups and start the implementation (20-25 min)
 
 - If the super powers have been loaded correctly, you can just enter the following prompt and you should see something like the following:
 ![How to check obra super powers are being used](assets/screenshot_obra_superpowers_brainstorming.png)
 - Prompt: `Brainstorm: Build the AI News Collector app based on initial-requirements.md. Please create detailed requirements in a requirements.md, then create UI wireframes and iterate until I approve them, saving the final design to UI-Design.md. Then implement the full app. Use ANTHROPIC_API_KEY & ANTHROPIC_BASE_URL env vars. Commit directly to main. Use subagents for parallel execution where possible.`
 - For the scope of this time-boxed session, pls opt for simple options in the questions you are getting asked - feel free later to make different choices
-- If this is fully completed & you get asked the question what to do (see screeshot below), just select the option `keept as it is` 
+- If this is fully completed & you get asked the question what to do (see screenshot below), just select the option `keep as it is` 
 ![Select - keep as it is when using obra super powers here](assets/screenshot_superpowers_keep_as_it_is.png)
-- If in doubt what to do, ask claude
+- If in doubt what to do, ask Claude
 
 
 ### 4. Ask Claude to spin up the frontend and backend and play around with the UI (does it work as designed?) (5min)
@@ -54,7 +54,7 @@ This is a small demo project for learning purposes, during which you will build 
 
 - Example Prompt: `Brainstorm: I encountered bug x, z does not work when doing y, pls fix it` or
   `Brainstorm:: X does not work please fix it`
-- The "secret ingredient" is to ask claude, whenever it is doing any changes to verify it works end2end, with that, you build up a feedbackloop for Claude against it can fix & implement things until it works. To test this out instead, you can try `Brainstorm:: X does not work please fix it`
+- The "secret ingredient" is to ask Claude, whenever it is doing any changes, to verify it works end2end — with that, you build up a feedback loop with which Claude can fix & implement things until it works. To test this out instead, you can try `Brainstorm:: X does not work please fix it`
 
 ### 6. Optional: Adversarial testing
 
@@ -70,14 +70,14 @@ This is a small demo project for learning purposes, during which you will build 
 
 ## Reflection:
 
-- what when well what did not go well?
+- what went well, what did not go well?
 
 ## Overview of patterns & best practices, which have proven themselves useful in the past
 
 (not all of them have been applied here due to the time constraints)
 
 - Feedback loops: let the agent verify end2end that the implemented functionality works and work on it until it can verify it works, aka `closing the loop`
-  -> this includes configuring an LLM key with a small budget, so that claude can test the entire functionality off the app including everything LLM related
+  -> this includes configuring an LLM key with a small budget, so that Claude can test the entire functionality of the app including everything LLM related
 - Use Obra Superpowers for brainstorming, implementation and bug fixing (or anything else involving more complex work)
 - Add instructions to claude.md to note any learnings in an ai-learnings.md file for troubleshooting and in case of problems, please look it up whether a solution has already been found
 - While working with claude, update the instructions for claude code (documentation, claude.md or skills) on the fly to continuously improve the process instructions along which claude code is working
@@ -85,10 +85,10 @@ This is a small demo project for learning purposes, during which you will build 
 - Parallel work: working with multiple claude code sessions in parallel
 - Verifying everything you do: either looking at the code directly or creating a sufficiently good testing framework with instructions for Claude Code, so that you can confidently state that the functionality works.
 - Asking Claude regularly to do a clean code refactoring of the code in order to keep the code base in a maintainable state (makes things also easier for Claude Code to work with), this is something one would typically write a skill for & refine it on the go
-- A living documentation in the repository: Include all relevant documentation you need in the repository and tell claude where to find it - this helps a lot. Later one also must think about how one wants to maintain this documentation / knowledgebase and how one collaborats with other people.
+- A living documentation in the repository: Include all relevant documentation you need in the repository and tell Claude where to find it - this helps a lot. Later one also must think about how one wants to maintain this documentation / knowledgebase and how one collaborates with other people.
 - Analyze the work Claude Code is doing on a meta level, ask Claude Code to give you documentation on the architecture diagrams, test coverage, testing approaches etc. so that you can work on a higher abstraction level, while still maintaining control
 - Claude Code almost can do everything (end2end testing, deployment, ...), but will most often only do so, if you tell it to do so and define & refine the process claude code should follow while doing work.
-- all of the content in this file applies to the current LLM generation around opus 4.6 and sonnet 4.6, new models might again push the boarder of what is possible and how you can best leverage them
+- all of the content in this file applies to the current LLM generation around opus 4.6 and sonnet 4.6, new models might again push the boundaries of what is possible and how you can best leverage them
 
 ## Trouble-Shooting
 

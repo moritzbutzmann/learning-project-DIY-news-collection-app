@@ -1,6 +1,6 @@
 Requirements for an AI News Collecting app:
 
-- I want to have an AI News collector which scrapes a set of configurable sites in the internet and collects news articles from them
+- I want to have an AI News collector which scrapes a set of configurable sites on the internet and collects news articles from them
 - The scrape should be triggered via a button on the UI & there should be an option to watch the ongoing scrape (keep it !VERY simple)
 - I want to have some kind of editor functionality where I can press a button and a draft for the newsletter is being generated, I want to be able to edit the newsletter
 - the draft should include the top 10 news articles which have been collected
